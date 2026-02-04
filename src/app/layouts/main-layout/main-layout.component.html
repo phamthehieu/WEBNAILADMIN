@@ -36,7 +36,7 @@
             <span class="material-symbols-outlined">spa</span>
           </div>
           <h1 class="logo-text">
-            booking<span class="logo-accent">AU</span>
+            WebNail<span class="logo-accent">Admin</span>
           </h1>
         </div>
 
@@ -60,11 +60,11 @@
           [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
         >
           <span class="material-symbols-outlined">{{ item.icon }}</span>
-          <span class="nav-label">{{ item.label }}</span>
+          <span class="nav-label">{{ item.labelKey | translate }}</span>
         </a>
 
         <div class="nav-section">
-          <p class="management-label">Management</p>
+          <p class="management-label">{{ 'admin.sections.management' | translate }}</p>
         </div>
 
         <a
@@ -74,7 +74,7 @@
           routerLinkActive="is-active"
         >
           <span class="material-symbols-outlined">{{ item.icon }}</span>
-          <span class="nav-label">{{ item.label }}</span>
+          <span class="nav-label">{{ item.labelKey | translate }}</span>
         </a>
       </nav>
 
@@ -83,7 +83,7 @@
           <img
             class="user-avatar"
             alt="Admin"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDviZdryBey5Vv4DsGG7Tio3JshWjTNwzpHBeNF-Dt4I9NUIOoEx07hEVm3mOAvldgQLWTmR-E7NuEydYiOx-1FTQLhmP6IVfFgKRUmQjVbtxJHrIv7O4Y3bI805ZazBNqV_489yGspzyyc12QqktobrWockTMa7CLw5R88HOUx9UC3_CHJFDYfAH66DTsvNAFLOS-nGRaTCH6F4spngtb1DAS0KFTanylsV3Eg2jgiA7okJaZrjReipxWu6j9VJ9nOkLJGdQ2RudY"
+            src="./assets/images/nail.png"
           />
           <div class="user-info">
             <p class="user-name">Nail Store 1</p>
@@ -108,16 +108,15 @@
           <span class="material-symbols-outlined">menu</span>
         </button>
 
-        <h2 class="page-title">{{ pageTitle() }}</h2>
+        <h2 class="page-title">{{ pageTitleKey() | translate }}</h2>
       </div>
 
       <div class="topbar-right">
         <button type="button" class="icon-btn" aria-label="Notifications">
           <span class="material-symbols-outlined">notifications</span>
         </button>
-        <button type="button" class="icon-btn" aria-label="Account">
-          <span class="material-symbols-outlined">account_circle</span>
-        </button>
+        <app-language-toggle></app-language-toggle>
+        <app-theme-toggle></app-theme-toggle>
       </div>
     </header>
 
@@ -128,11 +127,11 @@
 
       <footer class="layout-footer">
         <div class="footer-inner">
-          <div class="footer-copy">© 2024 BookingAU. All rights reserved.</div>
+          <div class="footer-copy">{{ 'admin.footer.copyright' | translate }}</div>
           <div class="footer-links">
-            <a class="footer-link" href="#">Help Center</a>
-            <a class="footer-link" href="#">Terms of Service</a>
-            <a class="footer-link" href="#">Privacy Policy</a>
+            <a class="footer-link" href="#">{{ 'admin.footer.helpCenter' | translate }}</a>
+            <a class="footer-link" href="#">{{ 'admin.footer.terms' | translate }}</a>
+            <a class="footer-link" href="#">{{ 'admin.footer.privacy' | translate }}</a>
           </div>
         </div>
       </footer>

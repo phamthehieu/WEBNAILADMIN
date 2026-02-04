@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="space-y-2">
-      <h1 class="text-2xl font-extrabold tracking-tight text-slate-900">Dashboard</h1>
-      <p class="text-sm text-slate-600">
+      <h1 class="text-2xl font-extrabold tracking-tight">Dashboard</h1>
+      <p class="text-sm opacity-80">
         Màn hình tạm thời (placeholder). Sẽ được thay bằng UI thật sau.
       </p>
     </div>

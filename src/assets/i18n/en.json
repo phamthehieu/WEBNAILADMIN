@@ -33,5 +33,27 @@
     "resendBtn": "Resend Code",
     "verifyIdentity": "Verify your identity",
     "verifyIdentityDesc": "Ensure your account is always secure and safe."
+  },
+  "admin": {
+    "title": "Admin",
+    "sections": {
+      "management": "Management"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "chart": "Chart",
+      "customer": "Customer",
+      "service": "Service",
+      "staff": "Staff",
+      "timesheet": "Timesheet",
+      "management": "Management",
+      "setting": "Setting"
+    },
+    "footer": {
+      "copyright": "© 2026 WebNailAdmin. All rights reserved.",
+      "helpCenter": "Help Center",
+      "terms": "Terms of Service",
+      "privacy": "Privacy Policy"
+    }
   }
 }

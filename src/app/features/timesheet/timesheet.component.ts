@@ -7,8 +7,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="space-y-2">
-      <h1 class="text-2xl font-extrabold tracking-tight text-slate-900">Timesheet</h1>
-      <p class="text-sm text-slate-600">Màn hình tạm thời (placeholder).</p>
+      <h1 class="text-2xl font-extrabold tracking-tight">Timesheet</h1>
+      <p class="text-sm opacity-80">Màn hình tạm thời (placeholder).</p>
     </div>
   `,
 })

@@ -38,5 +38,27 @@
     "resetPasswordSubtitle": "Nhập mật khẩu mới của bạn",
     "confirmPassword": "Xác nhận mật khẩu",
     "resetPasswordBtn": "Khôi phục mật khẩu"
+  },
+  "admin": {
+    "title": "Quản trị",
+    "sections": {
+      "management": "Quản lý"
+    },
+    "nav": {
+      "dashboard": "Dashboard",
+      "chart": "Biểu đồ",
+      "customer": "Khách hàng",
+      "service": "Dịch vụ",
+      "staff": "Nhân viên",
+      "timesheet": "Chấm công",
+      "management": "Quản lý",
+      "setting": "Cài đặt"
+    },
+    "footer": {
+      "copyright": "© 2026 WebNailAdmin. Tất cả quyền được bảo lưu.",
+      "helpCenter": "Trung tâm trợ giúp",
+      "terms": "Điều khoản dịch vụ",
+      "privacy": "Chính sách bảo mật"
+    }
   }
 }

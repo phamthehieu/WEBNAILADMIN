@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, computed, inject, signal } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { filter } from 'rxjs/operators';
+import { LanguageToggleComponent } from '../../shared/components/language-toggle/language-toggle.component';
+import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme-toggle.component';
 
 type NavItem = {
-  label: string;
+  labelKey: string;
   icon: string;
   link: string;
   exact?: boolean;
@@ -14,7 +17,15 @@ type NavItem = {
 @Component({
   selector: 'app-main-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive,
+    TranslateModule,
+    LanguageToggleComponent,
+    ThemeToggleComponent,
+  ],
   templateUrl: './main-layout.component.html',
   styleUrls: ['./main-layout.component.css'],
 })
@@ -28,17 +39,17 @@ export class MainLayoutComponent {
   readonly sidebarCollapsed = signal(false);
 
   readonly navItems: NavItem[] = [
-    { label: 'Dashboard', icon: 'dashboard', link: '/dashboard', exact: true, section: 'main' },
-    { label: 'Chart', icon: 'bar_chart', link: '/chart', section: 'main' },
-    { label: 'Customer', icon: 'group', link: '/customer', section: 'main' },
-    { label: 'Service', icon: 'content_cut', link: '/service', section: 'main' },
-    { label: 'Staff', icon: 'groups', link: '/staff', section: 'main' },
-    { label: 'Timesheet', icon: 'schedule', link: '/timesheet', section: 'main' },
-    { label: 'Management', icon: 'confirmation_number', link: '/management', section: 'management' },
-    { label: 'Setting', icon: 'settings', link: '/setting', section: 'management' },
+    { labelKey: 'admin.nav.dashboard', icon: 'dashboard', link: '/dashboard', exact: true, section: 'main' },
+    { labelKey: 'admin.nav.chart', icon: 'bar_chart', link: '/chart', section: 'main' },
+    { labelKey: 'admin.nav.customer', icon: 'group', link: '/customer', section: 'main' },
+    { labelKey: 'admin.nav.service', icon: 'content_cut', link: '/service', section: 'main' },
+    { labelKey: 'admin.nav.staff', icon: 'groups', link: '/staff', section: 'main' },
+    { labelKey: 'admin.nav.timesheet', icon: 'schedule', link: '/timesheet', section: 'main' },
+    { labelKey: 'admin.nav.management', icon: 'confirmation_number', link: '/management', section: 'management' },
+    { labelKey: 'admin.nav.setting', icon: 'settings', link: '/setting', section: 'management' },
   ];
 
-  readonly pageTitle = signal('Dashboard Overview');
+  readonly pageTitleKey = signal('admin.title');
   readonly mainNav = computed(() => this.navItems.filter((x) => (x.section ?? 'main') === 'main'));
   readonly managementNav = computed(() =>
     this.navItems.filter((x) => (x.section ?? 'main') === 'management')
@@ -72,7 +83,7 @@ export class MainLayoutComponent {
   private syncTitleFromUrl(url: string) {
     const path = url.split('?')[0].split('#')[0];
     const item = this.navItems.find((x) => x.link === path);
-    this.pageTitle.set(item?.label ?? 'Admin');
+    this.pageTitleKey.set(item?.labelKey ?? 'admin.title');
   }
 }
 
