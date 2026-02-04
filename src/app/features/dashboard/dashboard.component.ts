@@ -4,12 +4,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import {
   Appointment,
   AppointmentCardComponent,
-} from './card-dashboard/appointment-card.component';
+} from './components/appointment-card.component';
 import {
   DropdownOption,
   DropdownSelectComponent,
 } from '../../shared/components/dropdown-select/dropdown-select.component';
-import { AppointmentListViewComponent } from './card-dashboard/appointment-list-view.component';
+import { AppointmentListViewComponent } from './components/appointment-list-view.component';
 
 type ViewMode = 'grid' | 'list';
 
