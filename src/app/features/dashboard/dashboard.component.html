@@ -59,17 +59,22 @@
 
       <div class="flex items-center relative bg-white/5 p-1 rounded-lg">
         <div
-          class="absolute inset-y-1 left-1 w-[calc(50%-4px)] bg-rosegold/20 border border-rosegold/30 rounded-md toggle-bg"
+          class="absolute inset-y-1 left-1 w-[calc(50%-4px)] bg-rosegold/20 border border-rosegold/30 rounded-md transition-all duration-300"
+          [ngClass]="{ 'translate-x-full': viewMode === 'list' }"
         ></div>
         <button
           type="button"
-          class="relative z-10 p-1.5 rounded-md text-rosegold transition-all w-9 h-9 flex items-center justify-center"
+          class="relative z-10 p-1.5 rounded-md transition-all w-9 h-9 flex items-center justify-center"
+          [ngClass]="viewMode === 'grid' ? 'text-rosegold' : 'text-slate-400 hover:text-rosegold'"
+          (click)="setViewMode('grid')"
         >
           <span class="material-symbols-outlined text-lg leading-none">grid_view</span>
         </button>
         <button
           type="button"
-          class="relative z-10 p-1.5 rounded-md text-slate-400 hover:text-rosegold transition-all w-9 h-9 flex items-center justify-center"
+          class="relative z-10 p-1.5 rounded-md transition-all w-9 h-9 flex items-center justify-center"
+          [ngClass]="viewMode === 'list' ? 'text-rosegold' : 'text-slate-400 hover:text-rosegold'"
+          (click)="setViewMode('list')"
         >
           <span class="material-symbols-outlined text-lg leading-none">view_list</span>
         </button>
@@ -78,13 +83,19 @@
   </div>
 
   <main class="pb-4 dashboard-scroll pr-1 custom-scrollbar">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <app-appointment-card
-        *ngFor="let appointment of appointments; index as i"
-        [appointment]="appointment"
-        [index]="i"
-      ></app-appointment-card>
-    </div>
+    <ng-container *ngIf="viewMode === 'grid'; else listView">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <app-appointment-card
+          *ngFor="let appointment of appointments; index as i"
+          [appointment]="appointment"
+          [index]="i"
+        ></app-appointment-card>
+      </div>
+    </ng-container>
+
+    <ng-template #listView>
+      <app-appointment-list-view [appointments]="appointments"></app-appointment-list-view>
+    </ng-template>
   </main>
 
   <div class="absolute inset-0 -z-10 pointer-events-none opacity-20 overflow-hidden">

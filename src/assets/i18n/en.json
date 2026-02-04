@@ -75,6 +75,16 @@
       "serviceLabel": "Service",
       "timeLabel": "Time",
       "scheduledLabel": "Scheduled:"
+    },
+    "list": {
+      "staff": "Staff",
+      "client": "Client",
+      "serviceType": "Service Type",
+      "scheduledTime": "Scheduled Time",
+      "date": "Date",
+      "status": "Status",
+      "actions": "Actions"
     }
   }
 }
+

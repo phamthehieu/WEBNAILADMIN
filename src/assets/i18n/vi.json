@@ -80,6 +80,16 @@
       "serviceLabel": "Dịch vụ",
       "timeLabel": "Thời gian",
       "scheduledLabel": "Lịch hẹn:"
+    },
+    "list": {
+      "staff": "Nhân viên",
+      "client": "Khách hàng",
+      "serviceType": "Loại dịch vụ",
+      "scheduledTime": "Giờ hẹn",
+      "date": "Ngày",
+      "status": "Trạng thái",
+      "actions": "Thao tác"
     }
   }
 }
+

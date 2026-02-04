@@ -4,11 +4,14 @@ import { TranslateModule } from '@ngx-translate/core';
 import {
   Appointment,
   AppointmentCardComponent,
-} from './appointment-card.component';
+} from './card-dashboard/appointment-card.component';
 import {
   DropdownOption,
   DropdownSelectComponent,
 } from '../../shared/components/dropdown-select/dropdown-select.component';
+import { AppointmentListViewComponent } from './card-dashboard/appointment-list-view.component';
+
+type ViewMode = 'grid' | 'list';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,6 +21,7 @@ import {
     TranslateModule,
     AppointmentCardComponent,
     DropdownSelectComponent,
+    AppointmentListViewComponent,
   ],
   templateUrl: './dashboard.component.html',
 })
@@ -29,6 +33,8 @@ export class DashboardComponent {
     { value: 'laly', label: 'Laly' },
   ];
   selectedStaff: string = 'all';
+
+  viewMode: ViewMode = 'grid';
 
   private readonly baseAppointments: Appointment[] = [
     {
@@ -123,7 +129,9 @@ export class DashboardComponent {
       };
     },
   );
+
+  setViewMode(mode: ViewMode): void {
+    this.viewMode = mode;
+  }
 }
-
-
 
