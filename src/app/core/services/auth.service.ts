@@ -23,14 +23,15 @@ export class AuthService {
             const fakeToken = 'token_123';
             localStorage.setItem('token', fakeToken);
             this._token.set(fakeToken);
-            this.router.navigate(['/home']);
+            this.router.navigate(['/dashboard']);
         }
     }
 
     logout() {
         localStorage.removeItem('token');
         this._token.set(null);
-        this.router.navigate(['/home']);
+        // Logout -> quay về login
+        this.router.navigate(['/login']);
     }
 
     get token() {

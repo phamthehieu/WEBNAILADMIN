@@ -1,0 +1,142 @@
+<div class="main-layout">
+  <!-- Mobile overlay -->
+  <button
+    type="button"
+    class="drawer-overlay"
+    [class.is-open]="mobileDrawerOpen()"
+    (click)="closeMobileDrawer()"
+    aria-label="Close navigation"
+  ></button>
+
+  <!-- Sidebar / Drawer -->
+  <aside
+    class="sidebar"
+    [class.is-collapsed]="sidebarCollapsed()"
+    [class.is-mobile-open]="mobileDrawerOpen()"
+  >
+    <!-- Desktop collapse trigger (floating circle) -->
+    <button
+      type="button"
+      class="sidebar-trigger hide-on-mobile"
+      (click)="toggleSidebarCollapsed()"
+      aria-label="Toggle sidebar"
+    >
+      <span
+        class="material-symbols-outlined"
+        [class.is-collapsed]="sidebarCollapsed()"
+      >
+        chevron_left
+      </span>
+    </button>
+
+    <div class="sidebar-inner">
+      <div class="sidebar-top">
+        <div class="logo">
+          <div class="logo-badge">
+            <span class="material-symbols-outlined">spa</span>
+          </div>
+          <h1 class="logo-text">
+            booking<span class="logo-accent">AU</span>
+          </h1>
+        </div>
+
+        <!-- Mobile close -->
+        <button
+          type="button"
+          class="icon-btn show-on-mobile"
+          (click)="closeMobileDrawer()"
+          aria-label="Close drawer"
+        >
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <nav class="nav custom-scrollbar">
+        <a
+          *ngFor="let item of mainNav()"
+          class="sidebar-item"
+          [routerLink]="item.link"
+          routerLinkActive="is-active"
+          [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+        >
+          <span class="material-symbols-outlined">{{ item.icon }}</span>
+          <span class="nav-label">{{ item.label }}</span>
+        </a>
+
+        <div class="nav-section">
+          <p class="management-label">Management</p>
+        </div>
+
+        <a
+          *ngFor="let item of managementNav()"
+          class="sidebar-item"
+          [routerLink]="item.link"
+          routerLinkActive="is-active"
+        >
+          <span class="material-symbols-outlined">{{ item.icon }}</span>
+          <span class="nav-label">{{ item.label }}</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="user-card">
+          <img
+            class="user-avatar"
+            alt="Admin"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDviZdryBey5Vv4DsGG7Tio3JshWjTNwzpHBeNF-Dt4I9NUIOoEx07hEVm3mOAvldgQLWTmR-E7NuEydYiOx-1FTQLhmP6IVfFgKRUmQjVbtxJHrIv7O4Y3bI805ZazBNqV_489yGspzyyc12QqktobrWockTMa7CLw5R88HOUx9UC3_CHJFDYfAH66DTsvNAFLOS-nGRaTCH6F4spngtb1DAS0KFTanylsV3Eg2jgiA7okJaZrjReipxWu6j9VJ9nOkLJGdQ2RudY"
+          />
+          <div class="user-info">
+            <p class="user-name">Nail Store 1</p>
+            <p class="user-role">Administrator</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="content">
+    <header class="topbar">
+      <div class="topbar-left">
+        <!-- Mobile open -->
+        <button
+          type="button"
+          class="icon-btn show-on-mobile"
+          (click)="toggleMobileDrawer()"
+          aria-label="Open navigation"
+        >
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <h2 class="page-title">{{ pageTitle() }}</h2>
+      </div>
+
+      <div class="topbar-right">
+        <button type="button" class="icon-btn" aria-label="Notifications">
+          <span class="material-symbols-outlined">notifications</span>
+        </button>
+        <button type="button" class="icon-btn" aria-label="Account">
+          <span class="material-symbols-outlined">account_circle</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="content-body custom-scrollbar">
+      <div class="content-inner">
+        <router-outlet></router-outlet>
+      </div>
+
+      <footer class="layout-footer">
+        <div class="footer-inner">
+          <div class="footer-copy">© 2024 BookingAU. All rights reserved.</div>
+          <div class="footer-links">
+            <a class="footer-link" href="#">Help Center</a>
+            <a class="footer-link" href="#">Terms of Service</a>
+            <a class="footer-link" href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+</div>
+
