@@ -60,5 +60,26 @@
       "terms": "Điều khoản dịch vụ",
       "privacy": "Chính sách bảo mật"
     }
+  },
+  "dashboard": {
+    "filter": {
+      "allStaff": "Tất cả nhân viên",
+      "searchPlaceholder": "Tìm theo tên hoặc số điện thoại..."
+    },
+    "dateBar": {
+      "weekday": "Thứ Ba",
+      "date": "20 Tháng 1, 2026",
+      "todayButton": "Hôm nay"
+    },
+    "appointment": {
+      "status": {
+        "completed": "Hoàn thành",
+        "pending": "Đang chờ",
+        "cancelled": "Đã hủy"
+      },
+      "serviceLabel": "Dịch vụ",
+      "timeLabel": "Thời gian",
+      "scheduledLabel": "Lịch hẹn:"
+    }
   }
 }

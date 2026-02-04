@@ -55,5 +55,26 @@
       "terms": "Terms of Service",
       "privacy": "Privacy Policy"
     }
+  },
+  "dashboard": {
+    "filter": {
+      "allStaff": "All Staff Members",
+      "searchPlaceholder": "Search by name or phone..."
+    },
+    "dateBar": {
+      "weekday": "Tuesday",
+      "date": "Jan 20, 2026",
+      "todayButton": "Today"
+    },
+    "appointment": {
+      "status": {
+        "completed": "Completed",
+        "pending": "Pending",
+        "cancelled": "Cancelled"
+      },
+      "serviceLabel": "Service",
+      "timeLabel": "Time",
+      "scheduledLabel": "Scheduled:"
+    }
   }
 }

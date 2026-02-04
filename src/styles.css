@@ -53,152 +53,6 @@
   --text-muted: #a0a0a0; /* Light gray */
 }
 
-/* Dashboard luxe utilities (dùng chung, ăn theo biến theme) */
-.card {
-  background: var(--card-bg);
-  border: 1px solid var(--border-dark, rgba(241, 228, 226, 1));
-  border-radius: 24px;
-  padding: 20px;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-:root:not(.dark) .card {
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-}
-.card-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 12px;
-}
-.card-label {
-  margin: 0;
-  font-size: 11px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--text-muted, rgba(140, 126, 124, 1));
-}
-.card-value {
-  margin: 0;
-  font-size: 28px;
-  font-weight: 800;
-  color: var(--text-main);
-}
-
-.panel {
-  background: var(--card-bg);
-  border: 1px solid var(--border-dark, rgba(241, 228, 226, 1));
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
-}
-:root:not(.dark) .panel {
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-}
-.divider {
-  border-color: color-mix(in srgb, var(--border-dark, rgba(241, 228, 226, 1)) 100%, transparent);
-}
-.row {
-  padding: 16px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-  transition: background-color 200ms ease;
-}
-:root.dark .row:hover {
-  background: rgba(255, 255, 255, 0.05);
-}
-:root:not(.dark) .row:hover {
-  background: rgba(255, 154, 162, 0.06);
-}
-.row-avatar {
-  width: 48px;
-  height: 48px;
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 auto;
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-muted);
-  transition: background-color 200ms ease, color 200ms ease;
-}
-:root:not(.dark) .row-avatar {
-  background: rgba(15, 23, 42, 0.04);
-  color: rgba(140, 126, 124, 1);
-}
-:root.dark .row:hover .row-avatar {
-  background: rgba(224, 163, 154, 0.2);
-  color: var(--primary);
-}
-:root:not(.dark) .row:hover .row-avatar {
-  background: rgba(255, 154, 162, 0.12);
-  color: var(--primary);
-}
-.row-name {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--text-main);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.row-sub {
-  margin: 0;
-  font-size: 11px;
-  color: var(--text-muted);
-}
-.row-time {
-  margin: 0;
-  font-size: 13px;
-  font-weight: 800;
-  color: var(--text-main);
-}
-.badge {
-  display: inline-block;
-  margin-top: 4px;
-  font-size: 10px;
-  font-weight: 800;
-  padding: 2px 8px;
-  border-radius: 999px;
-}
-.badge-ok {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.2);
-}
-.badge-warn {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.fab {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  height: 56px;
-  padding: 0 22px;
-  border: 0;
-  border-radius: 18px;
-  background: var(--primary);
-  color: #fff;
-  cursor: pointer;
-  box-shadow: 0 18px 40px rgba(224, 163, 154, 0.25);
-  transition: transform 180ms ease;
-}
-.fab:hover {
-  transform: scale(1.03);
-}
-.fab:active {
-  transform: scale(0.98);
-}
-
 .theme-curtain {
   position: fixed;
   inset: 0;
@@ -769,7 +623,7 @@
   .ripple {
     position: absolute;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--card-bg);
     transform: scale(0);
     animation: ripple-animation 0.6s linear;
     pointer-events: none;
@@ -789,5 +643,116 @@
     box-shadow: 0 0 15px var(--secondary);
     transform: scale(1.05);
   }
+
+/* ---------- Dashboard cards (theo mẫu staff dashboard) ---------- */
+.bg-card-dark {
+  background-color: var(--card-bg);
+}
+.border-border-dark {
+  border-color: var(--border-dark);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+.text-rosegold {
+  color: var(--primary);
+}
+
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.card-hover {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: scale(1.02);
+  box-shadow: var(--primary);
+  border-color: var(--primary);
+}
+
+.nav-item-hover {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+.nav-item-hover:hover {
+  background-color: var(--primary);
+  color: var(--card-bg);
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+.toggle-bg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes pulse-gradient {
+  0%,
+  100% {
+    box-shadow:
+      0 0 15px rgba(251, 191, 36, 0.3),
+      0 0 30px var(--primary);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(251, 191, 36, 0.6),
+      0 0 50px var(--primary);
+  }
+}
+
+@keyframes breathing {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-pulse-gradient {
+  animation: pulse-gradient 3s ease-in-out infinite;
+}
+.animate-breathing {
+  animation: breathing 2s ease-in-out infinite;
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.dashboard-scroll {
+  height: calc(100vh - 180px);
+  overflow-y: auto;
+  padding-bottom: 160px;
+  scrollbar-width: none;
+}
 
   

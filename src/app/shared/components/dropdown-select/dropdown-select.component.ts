@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface DropdownOption {
   value: string;
@@ -9,7 +10,7 @@ export interface DropdownOption {
 @Component({
   selector: 'app-dropdown-select',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './dropdown-select.component.html',
   styleUrl: './dropdown-select.component.scss',
 })

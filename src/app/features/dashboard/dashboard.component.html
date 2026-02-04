@@ -1,0 +1,99 @@
+<section class="space-y-8 h-full relative flex flex-col min-h-0">
+  <div class="glass rounded-2xl px-6 py-4 flex items-center justify-between relative z-20">
+    <div class="flex items-center space-x-8 ">
+      <div
+        class="flex items-center space-x-3 rounded-lg px-4 py-2 transition-all cursor-pointer "
+      >
+        <app-dropdown-select
+          class="w-48"
+          [placeholder]="'dashboard.filter.allStaff'"
+          [options]="staffOptions"
+          [(value)]="selectedStaff"
+        ></app-dropdown-select>
+      </div>
+
+      <div class="relative group w-72">
+        <span
+          class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-rosegold transition-colors"
+        >
+          search
+        </span>
+        <input
+          type="text"
+          [placeholder]="'dashboard.filter.searchPlaceholder' | translate"
+          class="bg-white/5 placeholder:text-slate-400 border border-primary rounded-lg pl-10 pr-4 py-2 text-sm w-full focus:pr-4 focus:ring-rosegold/30 focus:border-rosegold transition-all outline-none"
+        />
+      </div>
+    </div>
+
+    <div class="flex items-center space-x-6">
+      <div class="flex items-center space-x-4 bg-white/5 rounded-full px-4 py-1.5">
+        <button
+          type="button"
+          class="material-symbols-outlined text-slate-400 hover:text-rosegold transition-colors nav-item-hover rounded-full p-1"
+        >
+          chevron_left
+        </button>
+        <div class="flex flex-col items-center min-w-[120px]">
+          <span class="text-xs uppercase tracking-widest text-slate-500 font-bold">
+            {{ 'dashboard.dateBar.weekday' | translate }}
+          </span>
+          <span class="text-sm font-semibold">
+            {{ 'dashboard.dateBar.date' | translate }}
+          </span>
+        </div>
+        <button
+          type="button"
+          class="material-symbols-outlined text-slate-400 hover:text-rosegold transition-colors nav-item-hover rounded-full p-1"
+        >
+          chevron_right
+        </button>
+      </div>
+
+      <button
+        type="button"
+        class="bg-white/5 nav-item-hover px-4 py-2 rounded-lg text-sm font-medium transition-all"
+      >
+        {{ 'dashboard.dateBar.todayButton' | translate }}
+      </button>
+
+      <div class="flex items-center relative bg-white/5 p-1 rounded-lg">
+        <div
+          class="absolute inset-y-1 left-1 w-[calc(50%-4px)] bg-rosegold/20 border border-rosegold/30 rounded-md toggle-bg"
+        ></div>
+        <button
+          type="button"
+          class="relative z-10 p-1.5 rounded-md text-rosegold transition-all w-9 h-9 flex items-center justify-center"
+        >
+          <span class="material-symbols-outlined text-lg leading-none">grid_view</span>
+        </button>
+        <button
+          type="button"
+          class="relative z-10 p-1.5 rounded-md text-slate-400 hover:text-rosegold transition-all w-9 h-9 flex items-center justify-center"
+        >
+          <span class="material-symbols-outlined text-lg leading-none">view_list</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main class="pb-4 dashboard-scroll pr-1 custom-scrollbar">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <app-appointment-card
+        *ngFor="let appointment of appointments; index as i"
+        [appointment]="appointment"
+        [index]="i"
+      ></app-appointment-card>
+    </div>
+  </main>
+
+  <div class="absolute inset-0 -z-10 pointer-events-none opacity-20 overflow-hidden">
+    <div
+      class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-[140px] animate-pulse"
+    ></div>
+    <div
+      class="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-rosegold/60 rounded-full blur-[160px] animate-pulse"
+      style="animation-delay: 1.5s"
+    ></div>
+  </div>
+</section>

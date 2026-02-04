@@ -1,7 +1,7 @@
 
 <div class="select" [class.open]="isOpen" (click)="toggleOpen($event)">
   <div class="selected">
-    <span>{{ selectedLabel }}</span>
+    <span>{{ selectedLabel | translate }}</span>
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -24,7 +24,7 @@
       (click)="select(option, $event)"
     >
       <label class="option">
-        {{ option.label }}
+        {{ option.label | translate }}
       </label>
     </div>
   </div>
