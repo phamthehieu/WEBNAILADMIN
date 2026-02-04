@@ -1,0 +1,42 @@
+{
+  "app": {
+    "title": "WebNailAdmin"
+  },
+  "auth": {
+    "title": "Đăng nhập",
+    "login": "Đăng Nhập",
+    "register": "ĐĂNG KÝ",
+    "welcomeBack": "Chào mừng trở lại",
+    "createAccount": "Tạo tài khoản mới",
+    "registerSubtitle": "Hoàn thành thông tin bên dưới để đăng ký",
+    "fullnamePlaceholder": "Họ và tên",
+    "phonePlaceholder": "Số điện thoại",
+    "emailPlaceholder": "Email hoặc Số điện thoại",
+    "passwordPlaceholder": "Mật khẩu",
+    "confirmPasswordPlaceholder": "Xác nhận mật khẩu",
+    "forgotPassword": "Quên mật khẩu?",
+    "continueWith": "Hoặc tiếp tục với",
+    "noAccount": "Chưa có tài khoản?",
+    "hasAccount": "Đã có tài khoản?",
+    "signUp": "Đăng ký ngay",
+    "loginNow": "Đăng nhập ngay",
+    "heroTitle": "Nâng cao phong cách cá nhân của bạn với mọi chi tiết.",
+    "backToLogin": "Quay lại Đăng nhập",
+    "resetPassword": "Khôi phục mật khẩu",
+    "forgotPasswordSubtitle": "Nhập email để khôi phục mật khẩu",
+    "forgotPasswordDescription": "Nhập email hoặc số điện thoại của bạn để nhận mã khôi phục",
+    "sendCode": "Gửi mã",
+    "otpTitle": "Xác nhận mã OTP",
+    "otpDesc": "Chúng tôi đã gửi mã xác nhận đến số điện thoại của bạn. Vui lòng nhập mã 6 chữ số bên dưới.",
+    "resendAfter": "Gửi lại mã sau",
+    "confirm": "Xác nhận",
+    "resendBtn": "Gửi lại mã",
+    "verifyIdentity": "Xác thực danh tính của bạn",
+    "verifyIdentityDesc": "Đảm bảo tài khoản của bạn luôn được bảo mật và an toàn tuyệt đối.",
+    "resetPasswordTitle": "Khôi phục mật khẩu",
+    "resetPasswordDescription": "Nhập mật khẩu mới của bạn",
+    "resetPasswordSubtitle": "Nhập mật khẩu mới của bạn",
+    "confirmPassword": "Xác nhận mật khẩu",
+    "resetPasswordBtn": "Khôi phục mật khẩu"
+  }
+}

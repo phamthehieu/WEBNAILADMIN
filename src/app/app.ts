@@ -1,12 +1,39 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
+import { ThemeService } from './core/services/theme.service';
+import { ContactFabComponent } from './shared/components/contact-fab/contact-fab.component';
+import { ScrollToTopFabComponent } from './shared/components/scroll-to-top-fab/scroll-to-top-fab.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ContactFabComponent, ScrollToTopFabComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('WEBNAILADMIN');
+  protected readonly title = signal('WebNailAdmin');
+
+  private readonly translate = inject(TranslateService);
+  private readonly themeService = inject(ThemeService); // Initialize theme service early
+
+  constructor() {
+    this.translate.addLangs(['vi', 'en']);
+    this.translate.setDefaultLang('vi');
+    const saved = localStorage.getItem('lang');
+    const browserLang = this.translate.getBrowserLang();
+    const raw = (saved as string | null) ?? browserLang ?? 'vi';
+    const lang = this.normalizeLang(raw);
+    this.useLanguage(lang);
+  }
+
+  private normalizeLang(raw: string): 'vi' | 'en' {
+    const lower = raw?.toLowerCase() ?? '';
+    if (lower.startsWith('en')) return 'en';
+    return 'vi';
+  }
+
+  useLanguage(lang: 'vi' | 'en') {
+    this.translate.use(lang);
+    localStorage.setItem('lang', lang);
+  }
 }

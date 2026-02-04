@@ -1,0 +1,75 @@
+<footer class="bg-slate-900 text-slate-400 py-24 px-6 relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+  <div class="max-w-7xl mx-auto relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-20">
+      <div class="col-span-1 md:col-span-1" appScrollReveal="up">
+        <div class="flex items-center gap-2 mb-8">
+          <div
+            class="w-10 h-10 bg-primary flex items-center justify-center rounded-xl text-white font-artistic text-xl"
+          >
+            N
+          </div>
+          <span class="text-xl font-artistic text-white"
+            >WebNail<span class="text-primary">Admin</span></span
+          >
+        </div>
+        <p class="text-sm leading-relaxed mb-8">
+          {{ 'home.footer.tagline' | translate }}
+        </p>
+        <div class="flex gap-4">
+          <a
+            class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+            href="#"
+          >
+            <mat-icon class="text-[20px]">public</mat-icon>
+          </a>
+          <a
+            class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+            href="#"
+          >
+            <mat-icon class="text-[20px]">camera_alt</mat-icon>
+          </a>
+          <a
+            class="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+            href="#"
+          >
+            <mat-icon class="text-[20px]">videocam</mat-icon>
+          </a>
+        </div>
+      </div>
+      <div appScrollReveal="up" [scrollRevealStagger]="80">
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.servicesTitle' | translate }}</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.signature' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.organicGel' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.art3d' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.services.deepCare' | translate }}</a></li>
+        </ul>
+      </div>
+      <div appScrollReveal="up" [scrollRevealStagger]="160">
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.communityTitle' | translate }}</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.artistJourney' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.customerStories' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.blog' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.community.workshop' | translate }}</a></li>
+        </ul>
+      </div>
+      <div appScrollReveal="up" [scrollRevealStagger]="240">
+        <h5 class="text-white font-bold text-lg mb-8">{{ 'home.footer.supportTitle' | translate }}</h5>
+        <ul class="space-y-4 text-sm font-medium">
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.faq' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.memberPolicy' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.contact' | translate }}</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#">{{ 'home.footer.support.feedback' | translate }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pt-12 border-t border-white/5 text-center" appScrollReveal="fade">
+      <p class="text-xs uppercase tracking-[0.3em] font-bold text-slate-500">
+        {{ 'home.footer.madeWith' | translate }} <span class="text-primary">WebNailAdmin</span> {{ 'home.footer.copyright' | translate }}
+      </p>
+    </div>
+  </div>
+</footer>
+
